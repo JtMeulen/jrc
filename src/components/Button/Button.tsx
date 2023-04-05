@@ -4,7 +4,7 @@ import "./Button.css";
 
 export interface ButtonProps {
   type?: "primary" | "secondary";
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
   label: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

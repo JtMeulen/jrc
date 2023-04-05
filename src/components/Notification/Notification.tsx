@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import "./Notification.css";
 
@@ -7,7 +7,7 @@ export interface NotificationProps {
   header?: string;
   content?: string;
   dismissable?: boolean;
-  onDismiss: () => void
+  onDismiss: () => void;
 }
 
 const Notification = ({
@@ -15,17 +15,35 @@ const Notification = ({
   header,
   content,
   dismissable = false,
+  onDismiss = () => {}
 }: NotificationProps) => {
-  // Set display: none if dismissed (use state here) and call onDismiss();
+  const [hidden, setHidden] = useState(false);
+
+  const onCloseClick = () => {
+    setHidden(true);
+    onDismiss();
+  };
 
   return (
-    <div className="notification">
-      <div className={classNames("notification__side-border", `notification__side-border--${type}`)}></div>
-      <div>
-        {header && <h2>{header}</h2>}
-        {content && <p>{content}</p>}
+    <div className={classNames(
+      "notification",
+      hidden && 'notification--hidden'
+    )}>
+      <div
+        className={classNames(
+          "notification__side-border",
+          `notification__side-border--${type}`
+        )}
+      ></div>
+      <div className="notification__text-wrapper">
+        {header && <h2 className="notification__header">{header}</h2>}
+        {content && <p className="notification__content">{content}</p>}
       </div>
-      {dismissable && <button>X</button>}
+      {dismissable && (
+        <button className="notification__close-button" onClick={onCloseClick}>
+          X
+        </button>
+      )}
     </div>
   );
 };

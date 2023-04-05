@@ -11,8 +11,7 @@
   "scripts": {
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "build": "rollup -c",
-    "deploy": "yarn build && npm publish"
+    "build": "rollup -c"
   },
   "dependencies": {
     "classnames": "^2.3.2"

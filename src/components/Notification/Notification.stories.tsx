@@ -24,7 +24,6 @@ Dismissable.args = {
   header: "I am dismissable",
   content: "I am content",
   dismissable: true,
-  onDismiss: () => console.log("Dismiss me"),
 };
 
 export const NoHeader = Template.bind({});
@@ -32,5 +31,4 @@ NoHeader.args = {
   type: "success",
   content: "I am content",
   dismissable: true,
-  onDismiss: () => console.log("Dismiss me"),
 };

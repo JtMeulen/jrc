@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import classNames from "classnames";
-import "./Notification.css";
+import cn from "classnames";
+import "./Notification.scss";
 
 export interface NotificationProps {
   type: "error" | "info" | "warning" | "success";
   header?: string;
-  content?: string;
+  content: string;
   dismissable?: boolean;
-  onDismiss: () => void;
+  onDismiss?: () => void;
 }
 
 const Notification = ({
   type,
   header,
-  content,
+  content = '',
   dismissable = false,
   onDismiss = () => {}
 }: NotificationProps) => {
@@ -25,12 +25,12 @@ const Notification = ({
   };
 
   return (
-    <div className={classNames(
+    <div className={cn(
       "notification",
       hidden && 'notification--hidden'
     )}>
       <div
-        className={classNames(
+        className={cn(
           "notification__side-border",
           `notification__side-border--${type}`
         )}

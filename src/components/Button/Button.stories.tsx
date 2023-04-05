@@ -10,14 +10,14 @@ export default {
 const Template: StoryFn<typeof Button> = (args) => (
   <Button
     {...args}
-    onClick={(ev) => {
-      console.log("onClick: ", ev.target);
-    }}
+    // onClick={(ev) => {
+    //   console.log("onClick: ", ev.target);
+    // }}
   />
 );
 
-export const Primary = Template.bind({});
-Primary.args = { label: "Primary", size: "large", type: "primary" };
+export const Default = Template.bind({});
+Default.args = { label: "Default button" };
 
 export const Secondary = Template.bind({});
 Secondary.args = { label: "Secondary", size: "large", type: "secondary" };

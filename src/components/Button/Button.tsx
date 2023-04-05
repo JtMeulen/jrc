@@ -1,6 +1,6 @@
 import React from "react";
-import classNames from "classnames";
-import "./Button.css";
+import cn from "classnames";
+import "./Button.scss";
 
 export interface ButtonProps {
   type?: "primary" | "secondary";
@@ -17,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={classNames("button", `button--${size}`, `button--${type}`)}
+      className={cn("button", `button--${size}`, `button--${type}`)}
       onClick={onClick}
     >
       {label}

@@ -3,7 +3,7 @@ import cn from "classnames";
 import "./Button.scss";
 
 export interface ButtonProps {
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "inverted";
   size?: "small" | "medium" | "large";
   label: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

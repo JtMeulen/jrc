@@ -11,8 +11,11 @@ const Template: StoryFn<typeof Button> = (args) => (
   <Button {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = { label: "Default button" };
+export const Primary = Template.bind({});
+Primary.args = { label: "Primary button", type: "primary" };
 
 export const Secondary = Template.bind({});
-Secondary.args = { label: "Secondary", size: "large", type: "secondary" };
+Secondary.args = { label: "Secondary", type: "secondary" };
+
+export const Inverted = Template.bind({});
+Inverted.args = { label: "Inverted", type: "inverted" };

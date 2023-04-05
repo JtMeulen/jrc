@@ -1,3 +1,4 @@
+@use '../../style/lib.scss' as *;
 @use '../../style/mixins.scss';
 
 .button {
@@ -5,20 +6,51 @@
 
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
+  border-radius: 12px;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
 
   &--primary {
     color: white;
-    background-color: #1ea7fd;
+    background-color: $jrc-color-primary;
+
+    &:hover {
+      background-color: $jrc-color-primary-hover;
+    }
+
+    &:active, &:focus {
+      background-color: $jrc-color-primary-active;
+    }
   }
 
   &--secondary {
-    color: #333;
+    color: white;
+    background-color: $jrc-color-secondary;
+
+    &:hover {
+      background-color: $jrc-color-secondary-hover;
+    }
+
+    &:active, &:focus {
+      background-color: $jrc-color-secondary-active;
+    }
+  }
+
+  &--inverted {
+    color: $jrc-color-primary;
     background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    box-shadow: $jrc-color-primary 0px 0px 0px 1px inset;
+
+    &:hover {
+      color: $jrc-color-primary-hover;
+      box-shadow: $jrc-color-primary-hover 0px 0px 0px 1px inset;
+    }
+
+    &:active, &:focus {
+      color: $jrc-color-primary-active;
+      box-shadow: $jrc-color-primary-active 0px 0px 0px 1px inset;
+    }
   }
 
   &--small {

@@ -1,5 +1,8 @@
+@use '../../style/mixins.scss';
+
 .notification {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @include mixins.font-family();
+
   padding: 4px;
   display: flex;
   line-height: 1;

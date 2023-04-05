@@ -1,2 +1,2 @@
-export { default as Button } from "./components/Button";
-export { default as Notification } from "./components/Notification";
+export { default as Button } from "./components/Button/_index";
+export { default as Notification } from "./components/Notification/_index";

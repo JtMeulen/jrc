@@ -8,12 +8,7 @@ export default {
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = (args) => (
-  <Button
-    {...args}
-    // onClick={(ev) => {
-    //   console.log("onClick: ", ev.target);
-    // }}
-  />
+  <Button {...args} />
 );
 
 export const Default = Template.bind({});

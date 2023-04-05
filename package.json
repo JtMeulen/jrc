@@ -1,5 +1,5 @@
 {
-  "name": "jrc",
+  "name": "joe-react-components",
   "version": "0.1.0",
   "author": "Joey ter Meulen",
   "description": "A react component library",
@@ -11,7 +11,8 @@
   "scripts": {
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "deploy": "yarn build && npm publish"
   },
   "dependencies": {
     "classnames": "^2.3.2"
@@ -45,7 +46,6 @@
     "react-dom": "^18.2.0"
   },
   "files": [
-    "src",
     "lib"
   ]
 }

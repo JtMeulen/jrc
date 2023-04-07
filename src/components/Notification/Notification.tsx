@@ -13,9 +13,9 @@ export interface NotificationProps {
 const Notification = ({
   type,
   header,
-  content = '',
+  content = "",
   dismissable = false,
-  onDismiss = () => {}
+  onDismiss = () => {},
 }: NotificationProps) => {
   const [hidden, setHidden] = useState(false);
 
@@ -25,10 +25,7 @@ const Notification = ({
   };
 
   return (
-    <div className={cn(
-      "notification",
-      hidden && 'notification--hidden'
-    )}>
+    <div className={cn("notification", hidden && "notification--hidden")}>
       <div
         className={cn(
           "notification__side-border",
@@ -36,11 +33,17 @@ const Notification = ({
         )}
       ></div>
       <div className="notification__text-wrapper">
-        {header && <h2 className="notification__header">{header}</h2>}
+        {header && (
+          <h2 className="notification__header">{header}</h2>
+        )}
         {content && <p className="notification__content">{content}</p>}
       </div>
       {dismissable && (
-        <button className="notification__close-button" onClick={onCloseClick}>
+        <button
+          className="notification__close-button"
+          onClick={onCloseClick}
+          aria-label="Close"
+        >
           X
         </button>
       )}

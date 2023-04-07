@@ -6,7 +6,7 @@ export interface ButtonProps {
   type?: "primary" | "secondary" | "inverted";
   size?: "small" | "medium" | "large";
   label: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: () => void;
 }
 
 const Button = ({

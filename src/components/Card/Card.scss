@@ -3,4 +3,27 @@
 
 .card {
   @include mixins.font-family();
+
+  display: inline-block;
+  min-width: 300px;
+  width: 350px;
+  background-color: $jrc-color-background;
+  border-radius: 4px;
+  box-shadow: $jrc-box-shadow;
+  transition: transform .2s;
+
+  &--actionable:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  &__header-image {
+    max-width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  section {
+    padding: 8px;
+  }
 }

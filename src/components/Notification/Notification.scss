@@ -9,7 +9,7 @@
   line-height: 1;
   border-radius: 4px;
   border: 1px solid $jrc-color-border;
-  background: white;
+  background-color: $jrc-color-background;
 
   &--hidden {
     display: none;

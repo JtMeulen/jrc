@@ -1,5 +1,7 @@
 import React from "react";
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 import Button from "./Button";
 
 describe("Button", () => {
@@ -33,15 +35,10 @@ describe("Button", () => {
 
   test("calls onClick handler with enter key", async () => {
     const handleClick = jest.fn();
-    const { findByTestId } = render(
-      <Button label="Test Button" onClick={handleClick} />
-    );
+    render(<Button label="Test Button" onClick={handleClick} />);
 
-    const buttonEl = await findByTestId("jrc-button");
-
-    fireEvent.focus(buttonEl);
-    fireEvent.keyDown(buttonEl, { key: "Enter" });
-    // TODO Why is this focus and enter key not working
-    // expect(handleClick).toHaveBeenCalled();
+    await userEvent.keyboard("[Tab]");
+    await userEvent.keyboard("[Enter]");
+    expect(handleClick).toHaveBeenCalled();
   });
 });

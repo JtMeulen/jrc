@@ -19,6 +19,7 @@ const Button = ({
     <button
       className={cn("button", `button--${size}`, `button--${type}`)}
       onClick={onClick}
+      data-testid="jrc-button"
     >
       {label}
     </button>

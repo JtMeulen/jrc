@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders without error 1`] = `
+<div>
+  <button
+    class="button button--medium button--primary"
+    data-testid="jrc-button"
+  >
+    Test Button
+  </button>
+</div>
+`;

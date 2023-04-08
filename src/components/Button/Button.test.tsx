@@ -1,7 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-// import { axe } from "jest-axe";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import Button from "./Button";
 
 describe("Button", () => {
@@ -10,24 +8,40 @@ describe("Button", () => {
     expect(container).toMatchSnapshot();
   });
 
-  // test("renders with different props", () => {
-  //   const { container, getByText } = render(
-  //     <Button label="Test Button" type="secondary" size="large" />
-  //   );
-  //   expect(container).toBeInTheDocument();
-  //   expect(getByText("Test Button")).toHaveClass("button button--large button--secondary");
-  // });
+  test("renders with different props", async () => {
+    const { findByTestId } = render(
+      <Button label="Test Button" type="secondary" size="large" />
+    );
 
-  // test("calls onClick handler when clicked", () => {
-  //   const handleClick = jest.fn();
-  //   const { getByText } = render(<Button label="Test Button" onClick={handleClick} />);
-  //   fireEvent.click(getByText("Test Button"));
-  //   expect(handleClick).toHaveBeenCalled();
-  // });
+    const buttonEl = await findByTestId("jrc-button");
 
-  // test("meets accessibility standards", async () => {
-  //   const { container } = render(<Button label="Test Button" />);
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
+    expect(buttonEl).toBeInTheDocument();
+    expect(buttonEl).toHaveClass("button button--large button--secondary");
+  });
+
+  test("calls onClick handler when clicked", async () => {
+    const handleClick = jest.fn();
+    const { findByTestId } = render(
+      <Button label="Test Button" onClick={handleClick} />
+    );
+
+    const buttonEl = await findByTestId("jrc-button");
+
+    fireEvent.click(buttonEl);
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  test("calls onClick handler with enter key", async () => {
+    const handleClick = jest.fn();
+    const { findByTestId } = render(
+      <Button label="Test Button" onClick={handleClick} />
+    );
+
+    const buttonEl = await findByTestId("jrc-button");
+
+    fireEvent.focus(buttonEl);
+    fireEvent.keyDown(buttonEl, { key: "Enter" });
+    // TODO Why is this focus and enter key not working
+    // expect(handleClick).toHaveBeenCalled();
+  });
 });

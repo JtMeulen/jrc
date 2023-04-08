@@ -1,22 +1,18 @@
 module.exports = {
   roots: ["<rootDir>/src"],
-
-  // Jest transformations -- this adds support for TypeScript using ts-jest
+  clearMocks: true,
+  testEnvironment: "jsdom",
+  // Jest transformations -- this adds support for TypeScript using ts-jest and transforms scss files
   transform: {
     "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.scss$": "jest-transform-css",
   },
-
-  // // Runs special logic, such as cleaning up components
-  // // when using React Testing Library and adds special
-  // // extended assertions to Jest
-  // setupFilesAfterEnv: [
-  //   "@testing-library/react/cleanup-after-each",
-  //   "@testing-library/jest-dom/extend-expect",
-  // ],
-
-  testMatch: [
-    "<rootDir>/src/components/**/*.test.tsx"
-  ],
+  // adds special extended assertions to Jest
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  testMatch: ["<rootDir>/src/components/**/*.test.tsx"],
   // Module file extensions for importing
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleNameMapper: {
+    "\\.scss$": "identity-obj-proxy",
+  },
 };

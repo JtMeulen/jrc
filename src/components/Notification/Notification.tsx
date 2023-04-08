@@ -7,7 +7,7 @@ export interface NotificationProps {
   header?: string;
   content: string;
   dismissable?: boolean;
-  onDismiss?: () => void;
+  onClose?: () => void;
 }
 
 const Notification = ({
@@ -15,17 +15,20 @@ const Notification = ({
   header,
   content = "",
   dismissable = false,
-  onDismiss = () => {},
+  onClose = () => {},
 }: NotificationProps) => {
   const [hidden, setHidden] = useState(false);
 
   const onCloseClick = () => {
     setHidden(true);
-    onDismiss();
+    onClose();
   };
 
   return (
-    <div className={cn("notification", hidden && "notification--hidden")}>
+    <div
+      className={cn("notification", hidden && "notification--hidden")}
+      data-testid="jrc-notification"
+    >
       <div
         className={cn(
           "notification__side-border",
@@ -33,9 +36,7 @@ const Notification = ({
         )}
       ></div>
       <div className="notification__text-wrapper">
-        {header && (
-          <h2 className="notification__header">{header}</h2>
-        )}
+        {header && <h2 className="notification__header">{header}</h2>}
         {content && <p className="notification__content">{content}</p>}
       </div>
       {dismissable && (
@@ -43,6 +44,7 @@ const Notification = ({
           className="notification__close-button"
           onClick={onCloseClick}
           aria-label="Close"
+          data-testid="jrc-notification-close-button"
         >
           X
         </button>

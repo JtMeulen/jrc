@@ -10,15 +10,12 @@ describe("Button", () => {
     expect(container).toMatchSnapshot();
   });
 
+  // TODO: Snapshot for all props?
   test("renders with different props", async () => {
-    const { findByTestId } = render(
+    const { container } = render(
       <Button label="Test Button" type="secondary" size="large" />
     );
-
-    const buttonEl = await findByTestId("jrc-button");
-
-    expect(buttonEl).toBeInTheDocument();
-    expect(buttonEl).toHaveClass("button button--large button--secondary");
+    expect(container).toMatchSnapshot();
   });
 
   test("calls onClick handler when clicked", async () => {

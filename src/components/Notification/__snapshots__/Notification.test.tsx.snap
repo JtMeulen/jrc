@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification renders with different props 1`] = `
+<div>
+  <div
+    class="notification"
+    data-testid="jrc-notification"
+  >
+    <div
+      class="notification__side-border notification__side-border--warning"
+    />
+    <div
+      class="notification__text-wrapper"
+    >
+      <h2
+        class="notification__header"
+      >
+        Header here
+      </h2>
+      <p
+        class="notification__content"
+      >
+        Some content
+      </p>
+    </div>
+    <button
+      aria-label="Close"
+      class="notification__close-button"
+      data-testid="jrc-notification-close-button"
+    >
+      X
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Notification renders without error 1`] = `
+<div>
+  <div
+    class="notification"
+    data-testid="jrc-notification"
+  >
+    <div
+      class="notification__side-border notification__side-border--info"
+    />
+    <div
+      class="notification__text-wrapper"
+    >
+      <p
+        class="notification__content"
+      >
+        Notification content
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,6 @@
+@use '../../style/lib.scss' as *;
+@use '../../style/mixins.scss';
+
+.input {
+  @include mixins.font-family();
+}

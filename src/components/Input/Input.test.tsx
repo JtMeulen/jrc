@@ -6,7 +6,7 @@ import Input from "./Input";
 
 describe("Input", () => {
   test("renders without error", () => {
-    const { container } = render(<Input />);
+    const { container } = render(<Input name="Input field" type="button" />);
     expect(container).toMatchSnapshot();
   });
 });

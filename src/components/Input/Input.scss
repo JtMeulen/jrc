@@ -3,4 +3,19 @@
 
 .input {
   @include mixins.font-family();
+
+  height: 24px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  border: 1px solid $jrc-color-border;
+}
+
+.label {
+  @include mixins.font-family();
+
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
 }

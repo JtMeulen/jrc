@@ -8,7 +8,7 @@ export interface CardProps {
     src: string;
     alt: string;
   };
-  actionable: boolean;
+  actionable?: boolean;
   onClick?: () => void;
 }
 
@@ -27,9 +27,10 @@ const Card = ({
   return (
     <article
       className={cn("card", { "card--actionable": actionable })}
-      onClick={onClick}
+      onClick={onClick} // TODO: Should we prevent onClick to be called if not actionable?
       onKeyDown={handleonKeyDown}
       tabIndex={actionable ? 0 : -1}
+      data-testid="jrc-card"
     >
       {headerImage && (
         <img

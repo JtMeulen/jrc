@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders with a header image 1`] = `
+<div>
+  <article
+    class="card"
+    data-testid="jrc-card"
+    tabindex="-1"
+  >
+    <img
+      alt="alt text"
+      class="card__header-image"
+      src="http://image.com"
+    />
+    <section>
+      <div />
+    </section>
+  </article>
+</div>
+`;
+
+exports[`Card renders without error 1`] = `
+<div>
+  <article
+    class="card"
+    data-testid="jrc-card"
+    tabindex="-1"
+  >
+    <section>
+      <div />
+    </section>
+  </article>
+</div>
+`;

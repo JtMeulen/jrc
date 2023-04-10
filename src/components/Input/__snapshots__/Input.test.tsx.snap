@@ -1,13 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input renders with label and attributes 1`] = `
+<div>
+  <label
+    class="label"
+    id="TODO:RANDOM-label"
+  >
+    Input label
+  </label>
+  <input
+    class="input"
+    data-testid="jrc-input"
+    disabled=""
+    labelled-by="TODO:RANDOM-label"
+    name="Input field"
+    placeholder="Placeholder text"
+    required=""
+    type="text"
+    value="I am value"
+  />
+</div>
+`;
+
 exports[`Input renders without error 1`] = `
 <div>
   <input
     class="input"
     data-testid="jrc-input"
-    labelled-by="TODO:RANDOM-label"
     name="Input field"
-    type="button"
+    type="text"
     value=""
   />
 </div>

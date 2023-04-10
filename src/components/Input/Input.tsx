@@ -8,14 +8,27 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   value?: string;
+  required?: boolean;
+  disabled?: boolean;
 }
 
-const Input = ({ label, placeholder, type, name, value = "" }: InputProps) => {
+// TODO: add custom validator
+// TODO: add error state
+
+const Input = ({
+  label,
+  placeholder,
+  type,
+  name,
+  value = "",
+  required = false,
+  disabled = false,
+}: InputProps) => {
   const [_value, setValue] = useState(value);
 
-  useEffect(() => {
-    console.log("value", _value);
-  }, [_value]);
+  // useEffect(() => {
+  //   console.log("value", _value);
+  // }, [_value]);
 
   return (
     <>
@@ -30,9 +43,11 @@ const Input = ({ label, placeholder, type, name, value = "" }: InputProps) => {
         placeholder={placeholder}
         type={type}
         name={name}
-        labelled-by={`${"TODO:RANDOM"}-label`} // UseRef good for this?
+        labelled-by={label && `${"TODO:RANDOM"}-label`} //TODO: UseRef good for this?
         value={_value}
         onChange={(e) => setValue(e.target.value)}
+        required={required}
+        disabled={disabled}
       ></input>
     </>
   );

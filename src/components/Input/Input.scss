@@ -13,9 +13,5 @@
 }
 
 .label {
-  @include mixins.font-family();
-
-  display: block;
-  font-weight: 700;
-  margin-bottom: 8px;
+  @include mixins.form-label();
 }

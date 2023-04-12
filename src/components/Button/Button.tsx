@@ -3,21 +3,21 @@ import cn from "classnames";
 import "./Button.scss";
 
 export interface ButtonProps {
-  type?: "primary" | "secondary" | "inverted";
+  color?: "primary" | "secondary" | "inverted";
   size?: "small" | "medium" | "large";
   label: string;
   onClick?: () => void;
 }
 
 const Button = ({
-  type = "primary",
+  color = "primary",
   size = "medium",
   label,
   onClick,
 }: ButtonProps) => {
   return (
     <button
-      className={cn("button", `button--${size}`, `button--${type}`)}
+      className={cn("button", `button--${size}`, `button--${color}`)}
       onClick={onClick}
       data-testid="jrc-button"
     >

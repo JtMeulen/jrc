@@ -13,7 +13,7 @@ describe("Button", () => {
   // TODO: Snapshot for all props?
   test("renders with different props", async () => {
     const { container } = render(
-      <Button label="Test Button" type="secondary" size="large" />
+      <Button label="Test Button" color="secondary" size="large" />
     );
     expect(container).toMatchSnapshot();
   });

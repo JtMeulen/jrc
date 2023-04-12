@@ -4,7 +4,7 @@ import "./Input.scss";
 
 export interface InputProps {
   name: string;
-  type: HTMLInputTypeAttribute; // This is making it set an object?
+  type?: HTMLInputTypeAttribute;
   label?: string;
   placeholder?: string;
   value?: string;
@@ -13,7 +13,6 @@ export interface InputProps {
 }
 
 // TODO: add custom validator
-// TODO: add error state
 
 const Input = ({
   label,
@@ -26,9 +25,9 @@ const Input = ({
 }: InputProps) => {
   const [_value, setValue] = useState(value);
 
-  // useEffect(() => {
-  //   console.log("value", _value);
-  // }, [_value]);
+  useEffect(() => {
+    setValue(value);
+  }, [value]);
 
   return (
     <>

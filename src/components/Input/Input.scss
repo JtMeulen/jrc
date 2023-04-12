@@ -10,6 +10,14 @@
   border-radius: 8px;
   font-size: 1.1em;
   border: 1px solid $jrc-color-border;
+
+  &:invalid {
+    border-color: $jrc-color-error;
+  }
+
+  &:disabled {
+    background-color: $jrc-color-background-disabled;
+  }
 }
 
 .label {

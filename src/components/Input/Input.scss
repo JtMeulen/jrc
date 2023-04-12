@@ -1,0 +1,25 @@
+@use '../../style/lib.scss' as *;
+@use '../../style/mixins.scss';
+
+.input {
+  @include mixins.font-family();
+
+  height: 24px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  border: 1px solid $jrc-color-border;
+
+  &:invalid {
+    border-color: $jrc-color-error;
+  }
+
+  &:disabled {
+    background-color: $jrc-color-background-disabled;
+  }
+}
+
+.label {
+  @include mixins.form-label();
+}

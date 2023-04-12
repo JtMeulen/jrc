@@ -1,3 +1,11 @@
 @mixin font-family() {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+@mixin form-label() {
+  @include font-family();
+
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}

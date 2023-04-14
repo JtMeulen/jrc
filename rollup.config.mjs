@@ -3,11 +3,13 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
-import svgr from "@svgr/rollup";
+import image from "@rollup/plugin-image";
 import copy from "rollup-plugin-copy";
 import alias from "@rollup/plugin-alias";
+import path from "path";
 
 import packageJson from "./package.json" assert { type: "json" };
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 export default {
   input: "src/components/index.ts",
@@ -34,17 +36,23 @@ export default {
       },
     }),
     postcss(),
-    svgr(),
+    image(),
     copy({
       targets: [
         {
-          src: "src/components/Icon/assets/*.svg",
-          dest: "lib/assets",
+          src: "src/components/Icon/assets",
+          dest: "lib",
         },
       ],
+      copyOnce: true,
     }),
     alias({
-      entries: [{ find: "./assets", replacement: "./assets" }],
+      entries: [
+        {
+          find: "assets",
+          replacement: path.resolve(__dirname, "src/components/Icon/assets"),
+        },
+      ],
     }),
   ],
 };

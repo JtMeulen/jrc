@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 import Icon from "./Icon";
 
 describe("Icon", () => {
+  // TODO: add tests for icon
   test("renders without error", () => {
     const { container } = render(<Icon name="check" size="md" />);
     expect(true).toEqual(true);

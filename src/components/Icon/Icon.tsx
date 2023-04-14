@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactSVG } from "react-svg";
 import cn from "classnames";
 
 import "./Icon.scss";
@@ -12,20 +11,13 @@ export interface IconProps {
 }
 
 const Icon = ({ name, size = "md", color, title }: IconProps) => {
-  try {
-    const iconSrc = require(`./assets/${name}.svg`); // Investigate why this is not loading correctly in bundle
-    return (
-      <div
-        className={cn("icon", `icon--size-${size}`)}
-        style={{ color: color }}
-      >
-        <ReactSVG src={iconSrc} title={title} />
-      </div>
-    );
-  } catch {
-    console.error(`No icon with name ${name} found.`);
-    return null;
-  }
+  return (
+    <div
+      className={cn("icon", `icon--size-${size}`, `icon--${name}`)}
+      style={{ color: color }}
+      aria-label={title}
+    ></div>
+  );
 };
 
 export default Icon;

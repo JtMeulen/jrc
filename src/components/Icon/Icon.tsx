@@ -14,7 +14,7 @@ const Icon = ({ name, size = "md", color, title }: IconProps) => {
   return (
     <div
       className={cn("icon", `icon--size-${size}`, `icon--${name}`)}
-      style={{ color: color }}
+      style={{ backgroundColor: color }}
       aria-label={title}
     ></div>
   );

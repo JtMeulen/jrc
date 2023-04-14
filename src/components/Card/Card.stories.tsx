@@ -16,9 +16,6 @@ const Template: StoryFn<typeof Card> = (args) => (
   </Card>
 );
 
-export const Primary = Template.bind({});
-Primary.args = {};
-
 export const WithImage = Template.bind({});
 WithImage.args = {
   headerImage: {
@@ -26,6 +23,9 @@ WithImage.args = {
     alt: "Image of a sunset",
   },
 };
+
+export const NoImage = Template.bind({});
+NoImage.args = {};
 
 export const Actionable = Template.bind({});
 Actionable.args = {

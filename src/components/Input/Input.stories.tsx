@@ -9,9 +9,6 @@ export default {
 
 const Template: StoryFn<typeof Input> = (args) => <Input {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
-
 export const LabelledAndPlaceholder = Template.bind({});
 LabelledAndPlaceholder.args = {
   label: "First name",
@@ -24,3 +21,6 @@ WithValue.args = {
   label: "First name",
   placeholder: "Type your name here",
 };
+
+export const NoLabel = Template.bind({});
+NoLabel.args = {};

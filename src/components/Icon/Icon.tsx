@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ReactSVG } from "react-svg";
 import cn from "classnames";
 
@@ -12,23 +12,20 @@ export interface IconProps {
 }
 
 const Icon = ({ name, size = "md", color, title }: IconProps) => {
-  const [iconSrc, setIconSrc] = useState<string | undefined>(undefined);
-
-  // Dynamically import the SVG file
-  useEffect(() => {
-    import(`./assets/${name}.svg`)
-      .then((svg) => setIconSrc(svg.default))
-      .catch((error) => console.error(`Error loading icon ${name}:`, error));
-  }, [name])
-
-  return (
-    <div
-      className={cn("icon", `icon--size-${size}`)}
-      style={{ color: color }}
-    >
-      {iconSrc ? <ReactSVG src={iconSrc} title={title} /> : null}
-    </div>
-  );
+  try {
+    const iconSrc = require(`./assets/${name}.svg`); // Investigate why this is not loading correctly in bundle
+    return (
+      <div
+        className={cn("icon", `icon--size-${size}`)}
+        style={{ color: color }}
+      >
+        <ReactSVG src={iconSrc} title={title} />
+      </div>
+    );
+  } catch {
+    console.error(`No icon with name ${name} found.`);
+    return null;
+  }
 };
 
 export default Icon;

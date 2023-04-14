@@ -3,9 +3,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
-// import image from '@rollup/plugin-image';
-
-import svgr from '@svgr/rollup';
+import copy from "rollup-plugin-copy";
+import svgr from "@svgr/rollup"
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -30,10 +29,15 @@ export default {
     typescript({
       useTsconfigDeclarationDir: true,
       tsconfigOverride: {
-        exclude: ["**/*.test.tsx"]
-      }
+        exclude: ["**/*.test.tsx"],
+      },
     }),
     postcss(),
     svgr(),
+    copy({
+      targets: [
+        { src: "src/components/Icon/assets/*.svg", dest: "lib/assets" },
+      ],
+    }),
   ],
 };

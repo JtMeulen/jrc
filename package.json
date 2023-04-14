@@ -1,6 +1,6 @@
 {
   "name": "joe-react-components",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "author": "Joey ter Meulen",
   "description": "A react component library",
   "main": "lib/index.js",
@@ -28,6 +28,7 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-url": "^8.0.1",
     "@storybook/addon-actions": "^7.0.2",
     "@storybook/addon-essentials": "^7.0.2",
     "@storybook/addon-links": "^7.0.2",
@@ -50,6 +51,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.20.2",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.34.1",

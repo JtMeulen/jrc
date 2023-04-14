@@ -3,9 +3,9 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
-import image from '@rollup/plugin-image';
+// import image from '@rollup/plugin-image';
 
-// import svgr from '@svgr/rollup';
+import svgr from '@svgr/rollup';
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -34,6 +34,6 @@ export default {
       }
     }),
     postcss(),
-    image(),
+    svgr(),
   ],
 };

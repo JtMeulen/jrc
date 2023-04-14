@@ -1,30 +1,31 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 import cn from "classnames";
-import * as Icons from './assets/index';
+
 import "./Icon.scss";
 
 export interface IconProps {
   name: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   color?: string;
-  alt?: string;
+  title?: string;
 }
 
-const Icon = ({
-  name,
-  size = "md",
-  color,
-  alt
-}: IconProps) => {
-  return (
-    <img
-      className={cn("icon", `icon--size-${size}`)}
-      // src={Icons[name.toLowerCase()]} does not work TS
-      style={{ fill: color, stroke: color, color: color }}
-      aria-hidden={Boolean(alt)} // Do not render in a11y tree if no alt text (thus being for styling only)
-      alt={alt}
-    />
-  );
+const Icon = ({ name, size = "md", color, title }: IconProps) => {
+  try {
+    const iconSrc = require(`./assets/${name}.svg`);
+    return (
+      <div
+        className={cn("icon", `icon--size-${size}`)}
+        style={{ color: color }}
+      >
+        <ReactSVG src={iconSrc} title={title} />
+      </div>
+    );
+  } catch {
+    console.error(`No icon with name ${name} found.`);
+    return null;
+  }
 };
 
 export default Icon;

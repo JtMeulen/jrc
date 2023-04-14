@@ -23,8 +23,7 @@
     "jsx": "react"
   },
   "include": [
-    "src",
-    "custom.d.ts"
+    "src"
   ],
   "exclude": [
       "node_modules",

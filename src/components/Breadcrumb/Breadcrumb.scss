@@ -1,0 +1,39 @@
+@use '../../style/lib.scss' as *;
+@use '../../style/mixins.scss';
+
+.breadcrumb {
+  @include mixins.font-family();
+
+  display: flex;
+
+  &__item {
+    color: $jrc-color-primary;
+
+    &:visited {
+      color: $jrc-color-primary;
+    }
+
+    &:hover,
+    &:focus {
+      color: $jrc-color-primary-hover;
+    }
+
+    &:active {
+      color: $jrc-color-primary-active;
+    }
+
+    text-decoration: none;
+
+    &--is-active {
+      text-decoration: underline;
+    }
+  }
+
+  &__separator {
+    margin: 0 8px;
+  }
+
+  &__separator:last-of-type {
+    display: none;
+  }
+}

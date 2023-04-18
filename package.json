@@ -14,7 +14,8 @@
     "build-storybook": "storybook build",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "new": "ts-node ./scripts/scaffold.ts"
   },
   "dependencies": {
     "classnames": "^2.3.2"

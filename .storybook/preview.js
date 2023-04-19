@@ -11,4 +11,9 @@ export const parameters = {
       order: ['Introduction', 'Theming','Components'],
     },
   },
+  docs: {
+    canvas: {
+      sourceState: 'shown'
+    }
+  }
 };

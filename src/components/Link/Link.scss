@@ -1,0 +1,24 @@
+@use "../../style/lib.scss" as *;
+@use "../../style/mixins.scss";
+
+.link {
+  @include mixins.font-family();
+  color: $jrc-color-primary;
+
+  &:visited {
+    color: $jrc-color-primary;
+  }
+
+  &:hover,
+  &:focus {
+    color: $jrc-color-primary-hover;
+  }
+
+  &:active {
+    color: $jrc-color-primary-active;
+  }
+
+  &--inline {
+    text-decoration: none;
+  }
+}

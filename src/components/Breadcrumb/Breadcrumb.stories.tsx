@@ -13,15 +13,17 @@ const breadcrumbData = [
   { id: "link-3", href: "/", text: "Profile" },
 ];
 
-const Template: StoryFn<typeof Breadcrumb> = (args) => (
-  <Breadcrumb {...args} data={breadcrumbData} />
-);
+const Template: StoryFn<typeof Breadcrumb> = (args) => <Breadcrumb {...args} />;
+
+const defaultProps = {
+  data: breadcrumbData,
+};
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = { ...defaultProps };
 
 export const ArrowSeparator = Template.bind({});
-ArrowSeparator.args = { separator: "→" };
+ArrowSeparator.args = { ...defaultProps, separator: "→" };
 
 export const ActiveLink = Template.bind({});
-ActiveLink.args = { activeId: "link-2" };
+ActiveLink.args = { ...defaultProps, activeId: "link-2" };

@@ -15,5 +15,13 @@ export const parameters = {
     canvas: {
       sourceState: 'shown'
     }
-  }
+  },
+  options: {
+		storySort: {
+			order: [
+				'Docs',
+        'Components'
+			],
+		},
+	},
 };

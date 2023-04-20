@@ -1,7 +1,7 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Source } from "@storybook/addon-docs";
 
 <Meta
-  title="Theming"
+  title="Docs/Theming"
   parameters={{
     viewMode: "docs",
     previewTabs: {
@@ -19,19 +19,26 @@ JRC offers a range of public CSS variables, which can be overwritten at the root
 
 Introduce a css file at the root of your project in which you will set new colors for the available public CSS classes. This does not necessarily need to be done on the root, you could even add themes per feature or per component.
 
-```css
+<Source
+  dark
+  language="css"
+  code={`
 body {
   --jrc-color-primary: hotpink;
   --jrc-color-secondary: limegreen;
   /* etc */
 }
-```
+  `}
+/>
 
 ## Available theming variables
 
 Below you the all available public CSS variables with their default values. Simply copy this file and change it's values to set your own theme.
 
-```css
+<Source
+  dark
+  language="css"
+  code={`
 body {
   --jrc-color-primary: #29339b;
   --jrc-color-primary-hover: #3440c2;
@@ -46,8 +53,11 @@ body {
   --jrc-color-info: #20a9ff;
   --jrc-color-error: #dd2109;
   --jrc-color-warning: #ff8f20;
+  --jrc-color-font: #1b1b1b;
   --jrc-color-border: #d9d9d9;
   --jrc-color-background: white;
+  --jrc-color-background-disabled: #f0efef;
   --jrc-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-```
+  `}
+/>

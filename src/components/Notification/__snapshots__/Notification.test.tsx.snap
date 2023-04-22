@@ -3,12 +3,16 @@
 exports[`Notification renders with different props 1`] = `
 <div>
   <div
-    class="notification"
+    class="notification notification--warning"
     data-testid="jrc-notification"
   >
     <div
-      class="notification__side-border notification__side-border--warning"
-    />
+      class="notification__icon-wrapper"
+    >
+      <div
+        class="icon icon--size-sm icon--warning"
+      />
+    </div>
     <div
       class="notification__text-wrapper"
     >
@@ -37,12 +41,16 @@ exports[`Notification renders with different props 1`] = `
 exports[`Notification renders without error 1`] = `
 <div>
   <div
-    class="notification"
+    class="notification notification--info"
     data-testid="jrc-notification"
   >
     <div
-      class="notification__side-border notification__side-border--info"
-    />
+      class="notification__icon-wrapper"
+    >
+      <div
+        class="icon icon--size-sm icon--info"
+      />
+    </div>
     <div
       class="notification__text-wrapper"
     >

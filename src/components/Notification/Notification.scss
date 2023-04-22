@@ -4,37 +4,42 @@
 .notification {
   @include mixins.font-family();
 
+  --jrc-color-icon: red;
   padding: 4px;
   display: flex;
   line-height: 1;
+  background-color: $jrc-color-background;
   border-radius: 4px;
   border: 1px solid $jrc-color-border;
-  background-color: $jrc-color-background;
+  border-left-width: 4px;
 
   &--hidden {
     display: none;
   }
 
-  &__side-border {
-    width: 4px;
-    border-radius: 2px;
-    margin-right: 4px;
+  &--error {
+    --jrc-color-icon: #{$jrc-color-error};
+    border-left-color: $jrc-color-error;
   }
 
-  &__side-border--error {
-    background: $jrc-color-error;
+  &--info {
+    --jrc-color-icon: #{$jrc-color-info};
+    border-left-color: $jrc-color-info;
   }
 
-  &__side-border--info {
-    background: $jrc-color-info;
+  &--warning {
+    --jrc-color-icon: #{$jrc-color-warning};
+    border-left-color: $jrc-color-warning;
   }
 
-  &__side-border--warning {
-    background: $jrc-color-warning;
+  &--success {
+    --jrc-color-icon: #{$jrc-color-success};
+    border-left-color: $jrc-color-success;
   }
 
-  &__side-border--success {
-    background: $jrc-color-success;
+  &__icon-wrapper{
+    align-self: center;
+    margin: 4px;
   }
 
   &__text-wrapper {

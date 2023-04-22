@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { Icon } from "../index";
 import "./Notification.scss";
 
 export interface NotificationProps {
@@ -26,15 +27,12 @@ const Notification = ({
 
   return (
     <div
-      className={cn("notification", hidden && "notification--hidden")}
+      className={cn("notification", `notification--${type}`, hidden && "notification--hidden")}
       data-testid="jrc-notification"
     >
-      <div
-        className={cn(
-          "notification__side-border",
-          `notification__side-border--${type}`
-        )}
-      ></div>
+      <div className="notification__icon-wrapper">
+        <Icon size="sm" name={type} />
+      </div>
       <div className="notification__text-wrapper">
         {header && <h2 className="notification__header">{header}</h2>}
         {content && <p className="notification__content">{content}</p>}

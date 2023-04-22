@@ -96,4 +96,4 @@ writeFile(`${NEW_COMP_DIR}/${COMP_CAPITALIZED}.scss`,
 `);
 
 // Add to components index for bundling
-fs.appendFileSync(COMPONENTS_DIR + 'index.ts', `export { default as ${COMP_CAPITALIZED} } from "./${COMP_CAPITALIZED}/_index"`);
+fs.appendFileSync(COMPONENTS_DIR + 'index.ts', `\nexport { default as ${COMP_CAPITALIZED} } from "./${COMP_CAPITALIZED}/_index";`);

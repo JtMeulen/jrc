@@ -1,0 +1,41 @@
+@use '../../style/lib.scss' as *;
+@use '../../style/mixins.scss';
+
+.modal {
+  @include mixins.font-family();
+
+  background-color: $jrc-color-background;
+  border: 1px solid $jrc-color-border;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 40%;
+
+  &--blurred::backdrop {
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+  }
+
+  &::backdrop {
+    background-color: $jrc-color-backdrop;
+  }
+
+  &__close-button {
+    color: $jrc-color-font;
+    float: right;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      color: $jrc-color-primary-hover;
+    }
+
+    &:active {
+      color: $jrc-color-primary-active;
+    }
+  }
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+  }
+}

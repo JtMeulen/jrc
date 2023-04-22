@@ -53,10 +53,19 @@
   }
 
   &__close-button {
+    color: $jrc-color-font;
     align-self: flex-start;
     margin-left: auto;
     border: 0;
     background: transparent;
     cursor: pointer;
+
+    &:hover, &:focus {
+      color: $jrc-color-primary-hover;
+    }
+
+    &:active {
+      color: $jrc-color-primary-active;
+    }
   }
 }

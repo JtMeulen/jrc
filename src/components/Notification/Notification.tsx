@@ -3,7 +3,7 @@ import cn from "classnames";
 import { Icon } from "../index";
 import "./Notification.scss";
 
-export interface NotificationProps {
+interface NotificationProps {
   type: "error" | "info" | "warning" | "success";
   header?: string;
   content: string;
@@ -11,13 +11,13 @@ export interface NotificationProps {
   onClose?: () => void;
 }
 
-const Notification = ({
+const Notification: React.FC<NotificationProps> = ({
   type,
   header,
   content = "",
   dismissable = false,
   onClose = () => {},
-}: NotificationProps) => {
+}) => {
   const [hidden, setHidden] = useState(false);
 
   const onCloseClick = () => {

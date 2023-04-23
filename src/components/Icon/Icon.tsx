@@ -3,14 +3,14 @@ import cn from "classnames";
 
 import "./Icon.scss";
 
-export interface IconProps {
+interface IconProps {
   name: string;
   size?: "sm" | "md" | "lg";
   color?: string;
   title?: string;
 }
 
-const Icon = ({ name, size = "md", color, title }: IconProps) => {
+const Icon: React.FC<IconProps> = ({ name, size = "md", color, title }) => {
   return (
     <div
       className={cn("icon", `icon--size-${size}`, `icon--${name}`)}

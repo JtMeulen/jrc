@@ -41,10 +41,10 @@ writeFile(`${NEW_COMP_DIR}/${COMP_CAPITALIZED}.tsx`,
 import cn from "classnames";
 import "./${COMP_CAPITALIZED}.scss";
 
-export interface ${COMP_CAPITALIZED}Props {
+interface ${COMP_CAPITALIZED}Props {
 }
 
-const ${COMP_CAPITALIZED} = ({}: ${COMP_CAPITALIZED}Props) => {
+const ${COMP_CAPITALIZED}: React.FC<${COMP_CAPITALIZED}Props> = ({}) => {
   return (
     <div className={cn("${COMP_LOWERCASE}")}></div>
   );

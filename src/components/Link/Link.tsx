@@ -2,19 +2,19 @@ import React, { ReactNode } from "react";
 import cn from "classnames";
 import "./Link.scss";
 
-export interface LinkProps {
+interface LinkProps {
   href: string;
   target?: string;
   children: ReactNode;
   inline?: boolean;
 }
 
-const Link = ({
+const Link: React.FC<LinkProps> = ({
   href,
   target = "_self",
   inline = false,
   children,
-}: LinkProps) => {
+}) => {
   return (
     <a
       className={cn("link", { "link--inline": inline })}

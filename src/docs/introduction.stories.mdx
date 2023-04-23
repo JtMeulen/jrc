@@ -33,14 +33,12 @@ To use a component from JRC, simply import it into your React application:
   dark
   language="js"
   code={`
-  import { Button } from "joe-react-components";
+import { Button } from "joe-react-components";
 
-class MyComponent extends React.Component {
-  render() {
-    return (
-      <Button onClick={this.handleClick}>Click me</Button>;
-    );
-  }
+const MyComponent = () => {
+  return (
+    <Button onClick={this.handleClick}>Click me</Button>;
+  );
 }
   `}
 />

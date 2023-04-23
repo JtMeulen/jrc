@@ -2,7 +2,7 @@ import React, { useState, useEffect, HTMLInputTypeAttribute } from "react";
 import cn from "classnames";
 import "./Input.scss";
 
-export interface InputProps {
+interface InputProps {
   name: string;
   type?: HTMLInputTypeAttribute;
   label?: string;
@@ -14,7 +14,7 @@ export interface InputProps {
 
 // TODO: add custom validator
 
-const Input = ({
+const Input: React.FC<InputProps> = ({
   label,
   placeholder,
   type,
@@ -22,7 +22,7 @@ const Input = ({
   value = "",
   required = false,
   disabled = false,
-}: InputProps) => {
+}) => {
   const [_value, setValue] = useState(value);
 
   useEffect(() => {

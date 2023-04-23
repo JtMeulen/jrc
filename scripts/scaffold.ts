@@ -41,10 +41,10 @@ writeFile(`${NEW_COMP_DIR}/${COMP_CAPITALIZED}.tsx`,
 import cn from "classnames";
 import "./${COMP_CAPITALIZED}.scss";
 
-interface ${COMP_CAPITALIZED}Props {
+export interface ${COMP_CAPITALIZED}Props {
 }
 
-const ${COMP_CAPITALIZED}: React.FC<${COMP_CAPITALIZED}Props> = ({}) => {
+const ${COMP_CAPITALIZED} = ({}: ${COMP_CAPITALIZED}Props) => {
   return (
     <div className={cn("${COMP_LOWERCASE}")}></div>
   );
@@ -61,6 +61,7 @@ import { render } from "@testing-library/react";
 import ${COMP_CAPITALIZED} from "./${COMP_CAPITALIZED}";
 
 describe("${COMP_CAPITALIZED}", () => {
+  // TODO: Add tests
   test("renders without error", () => {
     const { container } = render(<${COMP_CAPITALIZED} />);
     expect(true).toEqual(true);

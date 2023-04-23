@@ -4,6 +4,17 @@ import userEvent from "@testing-library/user-event";
 
 import Input from "./Input";
 
+jest.mock("react", () => {
+  return {
+    ...jest.requireActual<typeof React>("react"),
+    useRef: () => {
+      return {
+        current: 'randomMockId'
+      };
+    }
+  };
+});
+
 describe("Input", () => {
   test("renders without error", () => {
     const { container } = render(<Input name="Input field" type="text" />);
@@ -26,13 +37,15 @@ describe("Input", () => {
   });
 
   test("sets the value when typing", async () => {
-    const { findByTestId, container } = render(<Input name="Input field" type="text" />);
+    const { findByTestId, container } = render(
+      <Input name="Input field" type="text" />
+    );
 
     await userEvent.keyboard("[Tab]");
     await userEvent.keyboard("foo");
 
-    const cardEl = await findByTestId("jrc-input") as HTMLInputElement;
+    const cardEl = (await findByTestId("jrc-input")) as HTMLInputElement;
 
-    expect(cardEl).toHaveValue('foo');
+    expect(cardEl).toHaveValue("foo");
   });
 });

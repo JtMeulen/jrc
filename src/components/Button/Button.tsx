@@ -2,19 +2,19 @@ import React from "react";
 import cn from "classnames";
 import "./Button.scss";
 
-interface ButtonProps {
+export interface ButtonProps {
   color?: "primary" | "secondary" | "inverted";
   size?: "small" | "medium" | "large";
   label: string;
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   color = "primary",
   size = "medium",
   label,
   onClick,
-}) => {
+}: ButtonProps) => {
   return (
     <button
       className={cn("button", `button--${size}`, `button--${color}`)}

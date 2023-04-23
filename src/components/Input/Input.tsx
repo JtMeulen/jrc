@@ -1,8 +1,14 @@
-import React, { useState, useEffect, HTMLInputTypeAttribute } from "react";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  HTMLInputTypeAttribute,
+} from "react";
 import cn from "classnames";
+import { uid } from "uid/single";
 import "./Input.scss";
 
-interface InputProps {
+export interface InputProps {
   name: string;
   type?: HTMLInputTypeAttribute;
   label?: string;
@@ -14,7 +20,7 @@ interface InputProps {
 
 // TODO: add custom validator
 
-const Input: React.FC<InputProps> = ({
+const Input = ({
   label,
   placeholder,
   type,
@@ -22,7 +28,8 @@ const Input: React.FC<InputProps> = ({
   value = "",
   required = false,
   disabled = false,
-}) => {
+}: InputProps) => {
+  const randomId = useRef(uid());
   const [_value, setValue] = useState(value);
 
   useEffect(() => {
@@ -32,7 +39,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <>
       {label && (
-        <label id={`${"TODO:RANDOM"}-label`} className="label">
+        <label id={`${randomId.current}-label`} className="label">
           {label}
         </label>
       )}
@@ -42,7 +49,7 @@ const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         type={type}
         name={name}
-        labelled-by={label && `${"TODO:RANDOM"}-label`} //TODO: UseRef good for this?
+        labelled-by={label && `${randomId.current}-label`}
         value={_value}
         onChange={(e) => setValue(e.target.value)}
         required={required}

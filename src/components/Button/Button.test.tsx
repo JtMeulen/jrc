@@ -10,7 +10,6 @@ describe("Button", () => {
     expect(container).toMatchSnapshot();
   });
 
-  // TODO: Snapshot for all props?
   test("renders with different props", async () => {
     const { container } = render(
       <Button label="Test Button" color="secondary" size="large" />

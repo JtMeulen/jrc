@@ -2,19 +2,19 @@ import React, { useEffect, useRef, ReactNode } from "react";
 import cn from "classnames";
 import "./Modal.scss";
 
-interface ModalProps {
+export interface ModalProps {
   children: ReactNode;
   open: boolean;
   withBlur?: boolean;
   onClose?: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({
+const Modal = ({
   children,
   open = false,
   withBlur = false,
   onClose = () => {},
-}) => {
+}: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {

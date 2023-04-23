@@ -11,6 +11,7 @@ jest.mock('react', () => {
 });
 
 describe("Modal", () => {
+  // TODO: Add tests
   test("renders without error", () => {
     const { container } = render(<Modal open>eyo</Modal>);
     expect(true).toEqual(true);

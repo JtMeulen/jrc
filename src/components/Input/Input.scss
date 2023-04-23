@@ -5,7 +5,7 @@
   @include mixins.font-family();
 
   height: 24px;
-  width: 100%; // TODO: Investigate width of input
+  width: calc(100% - 16px); // minus twice padding
   padding: 8px;
   border-radius: 8px;
   font-size: 1.1em;

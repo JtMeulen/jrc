@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders with different props 1`] = `
+<div>
+  <div
+    aria-label="aria text"
+    class="icon icon--size-lg icon--star"
+    style="background-color: red;"
+  />
+</div>
+`;
+
+exports[`Icon renders without error 1`] = `
+<div>
+  <div
+    class="icon icon--size-md icon--success"
+  />
+</div>
+`;

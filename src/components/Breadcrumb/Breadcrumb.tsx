@@ -8,17 +8,17 @@ type BreadcrumbItem = {
   text: string;
 };
 
-interface BreadcrumbProps {
+export interface BreadcrumbProps {
   data: BreadcrumbItem[];
   separator?: string;
   activeId?: string;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({
+const Breadcrumb = ({
   data = [],
   separator = "/",
   activeId,
-}) => {
+}: BreadcrumbProps) => {
   return (
     <div className={cn("breadcrumb")}>
       {data.map((item) => {

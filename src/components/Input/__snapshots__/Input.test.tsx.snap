@@ -4,7 +4,7 @@ exports[`Input renders with label and attributes 1`] = `
 <div>
   <label
     class="label"
-    id="TODO:RANDOM-label"
+    id="randomMockId-label"
   >
     Input label
   </label>
@@ -12,7 +12,7 @@ exports[`Input renders with label and attributes 1`] = `
     class="input"
     data-testid="jrc-input"
     disabled=""
-    labelled-by="TODO:RANDOM-label"
+    labelled-by="randomMockId-label"
     name="Input field"
     placeholder="Placeholder text"
     required=""

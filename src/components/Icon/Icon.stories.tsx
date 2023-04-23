@@ -8,7 +8,7 @@ export default {
   argTypes: {
     name: {
       control: "select",
-      options: ["check", "chevron-left", "chevron-right", "error", "info", "star", "success", "warning"],
+      options: ["chevron-left", "chevron-right", "error", "info", "star", "success", "warning"],
     },
   },
   args: { name: 'star' },

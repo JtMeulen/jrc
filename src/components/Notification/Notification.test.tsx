@@ -10,7 +10,6 @@ describe("Notification", () => {
     expect(container).toMatchSnapshot();
   });
 
-  // TODO: Snapshot for all props?
   test("renders with different props", async () => {
     const { container } = render(
       <Notification type="warning" content="Some content" header="Header here" dismissable />

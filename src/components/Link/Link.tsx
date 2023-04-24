@@ -9,12 +9,12 @@ export interface LinkProps {
   inline?: boolean;
 }
 
-const Link = ({
+const Link: React.FC<LinkProps> = ({
   href,
   target = "_self",
   inline = false,
   children,
-}: LinkProps) => {
+}) => {
   return (
     <a
       className={cn("link", { "link--inline": inline })}

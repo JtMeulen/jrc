@@ -9,12 +9,12 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   color = "primary",
   size = "medium",
   label,
   onClick,
-}: ButtonProps) => {
+}) => {
   return (
     <button
       className={cn("button", `button--${size}`, `button--${color}`)}

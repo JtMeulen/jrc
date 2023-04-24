@@ -44,6 +44,9 @@
 
   &__text-wrapper {
     padding: 4px;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
   }
 
   &__header {

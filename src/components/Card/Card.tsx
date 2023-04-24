@@ -12,12 +12,12 @@ export interface CardProps {
   onClick?: () => void;
 }
 
-const Card = ({
+const Card: React.FC<CardProps> = ({
   children,
   headerImage,
   actionable = false,
   onClick = () => {},
-}: CardProps) => {
+}) => {
   const handleonKeyDown = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
       onClick();

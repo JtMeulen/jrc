@@ -20,7 +20,7 @@ export interface InputProps {
 
 // TODO: add custom validator
 
-const Input = ({
+const Input: React.FC<InputProps> = ({
   label,
   placeholder,
   type,
@@ -28,7 +28,7 @@ const Input = ({
   value = "",
   required = false,
   disabled = false,
-}: InputProps) => {
+}) => {
   const randomId = useRef(uid());
   const [_value, setValue] = useState(value);
 

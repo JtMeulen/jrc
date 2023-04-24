@@ -14,11 +14,11 @@ export interface BreadcrumbProps {
   activeId?: string;
 }
 
-const Breadcrumb = ({
+const Breadcrumb: React.FC<BreadcrumbProps> = ({
   data = [],
   separator = "/",
   activeId,
-}: BreadcrumbProps) => {
+}) => {
   return (
     <div className={cn("breadcrumb")}>
       {data.map((item) => {

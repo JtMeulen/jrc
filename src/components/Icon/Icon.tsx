@@ -10,7 +10,7 @@ export interface IconProps {
   title?: string;
 }
 
-const Icon = ({ name, size = "md", color, title }: IconProps) => {
+const Icon: React.FC<IconProps> = ({ name, size = "md", color, title }) => {
   return (
     <div
       className={cn("icon", `icon--size-${size}`, `icon--${name}`)}
